@@ -1,0 +1,24 @@
+project:
+  name: rice_leaf_disease_classification
+  seed: 123
+
+data:
+  dataset_path: "C:/Users/farid/Downloads/archive (5)/Rice_Leaf_AUG"
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  test_ratio: 0.15
+
+training:
+  image_size: 224
+  batch_size: 32
+  epochs_custom_cnn: 20
+  epochs_mobilenetv2: 20
+  use_class_weight: true
+
+models:
+  custom_cnn: true
+  mobilenetv2: true
+
+outputs:
+  output_dir: outputs
+  report_dir: reports

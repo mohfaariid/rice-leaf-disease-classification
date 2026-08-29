@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Local config
+.env
+config.yaml
+
+# Dataset and generated files
+data/*
+!data/README.md
+
+outputs/*
+!outputs/README.md
+
+reports/*
+!reports/README.md
+
+# Model artifacts
+*.keras
+*.h5
+*.tflite
+
+# Logs
+*.log
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
