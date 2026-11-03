@@ -1,0 +1,2 @@
+experiment,model,num_classes,excluded_class,image_size,batch_size,epochs_configured,epochs_ran,test_accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted,best_val_loss,best_val_accuracy
+custom_cnn_revised_6kelas_tanpa_tungro_val_loss_tuned,CNN Kustom Revised val-loss tuned,6,Tungro,256,32,30,30,0.7930434782608695,0.7968119530348203,0.7920660337939448,0.7922120029119982,0.7976543639113598,0.7930434782608695,0.7931417097956668,0.5715586543083191,0.8205574750900269

@@ -1,0 +1,2 @@
+model,accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted
+custom_cnn_dropout_balanced_tungro_636,0.8839285714285714,0.8854743741357554,0.8812561501571341,0.880729565023314,0.8903747996843859,0.8839285714285714,0.8846655491318965

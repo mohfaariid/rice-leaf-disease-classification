@@ -1,0 +1,27 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+.eval_venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.git/
+.gitignore
+.dockerignore
+*.md
+Tabel Excel/
+Gambar Skripsi/
+Draft Skripsi/
+Draft Paper/
+Panduan Penulisan/
+paper_findings/
+paper_pipeline_6kelas/
+references/
+outputs/training_backups/
+outputs/custom_cnn*.keras
+outputs/rice_disease_cnn*.keras
+outputs/rice_disease_model.keras

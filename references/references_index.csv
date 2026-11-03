@@ -1,0 +1,26 @@
+no,file,focus
+1,07_arXiv_Rice_Leaf_Disease_DL_2024.pdf,Deep learning untuk klasifikasi penyakit daun padi
+2,08_arXiv_Rice_Disease_Recognition_Transfer_Learning_2023.pdf,Transfer learning untuk pengenalan penyakit padi
+3,09_arXiv_Plant_Disease_Recognition_2024.pdf,Pengenalan penyakit tanaman berbasis deep learning
+4,10_IJACSA_Explainable_Deep_Transfer_Learning_Rice_2024.pdf,Transfer learning dan explainable AI untuk penyakit padi
+5,11_IJETER_Rice_Leaf_Disease_Deep_Learning_2020.pdf,Deep learning untuk penyakit daun padi
+6,12_JAIEA_Rice_Leaf_Disease_CNN.pdf,CNN untuk klasifikasi penyakit daun padi
+7,13_IJISEM_Rice_Leaf_Disease_CNN.pdf,Implementasi CNN untuk penyakit daun padi
+8,16_IJRITCC_Rice_Leaf_Disease_CNN.pdf,CNN untuk klasifikasi citra daun padi
+9,17_IJECE_Rice_Disease_Classification_CNN.pdf,Klasifikasi penyakit padi menggunakan CNN
+10,18_Frontiers_Automatic_Diagnosis_Rice_Diseases_DL_2021.pdf,Diagnosis otomatis penyakit padi menggunakan deep learning
+11,22_JAIC_Multi_Class_Rice_Leaf_Disease_2025.pdf,Klasifikasi multikelas penyakit daun padi
+12,23_CoSIE_MobileNetV2_EfficientNetB0_Rice_Leaf_Disease_2026.pdf,Perbandingan MobileNetV2 dan EfficientNetB0 untuk penyakit daun padi
+13,24_Mandiri_MobileNetV2_MobileNetV3_Rice_Leaf_Disease_2025.pdf,Perbandingan MobileNetV2 dan MobileNetV3 untuk penyakit daun padi
+14,25_TIERS_Enhanced_CAE_CNN_Rice_Leaf_Disease_2025.pdf,Arsitektur CNN efisien untuk klasifikasi penyakit daun padi
+15,27_JITK_Lightweight_CNN_Rice_Leaf_Disease_2026.pdf,Lightweight CNN untuk identifikasi penyakit daun padi
+16,30_KALAM_Deep_Learning_Rice_Leaf_Disease_2025.pdf,Deep learning untuk klasifikasi penyakit daun padi
+17,31_Frontiers_Image_Dataset_Config_Rice_Disease_CNN_2022.pdf,Pengaruh konfigurasi dataset pada CNN untuk penyakit padi
+18,33_HSET_Lightweight_MobileNetV2_Paddy_Disease_2023.pdf,MobileNetV2 ringan untuk deteksi penyakit padi
+19,34_ECTI_InceptionV3_VGG16_Paddy_Leaf_Disease_2024.pdf,Transfer learning untuk penyakit daun padi dengan model pretrained
+20,35_JIU_UPGRIS_MobileNetV2_TFLite_Rice_Disease_2024.pdf,MobileNetV2 dan TensorFlow Lite untuk deteksi penyakit padi
+21,36_BITS_Lightweight_CNN_Rice_Disease_Pests_2025.pdf,Lightweight CNN untuk penyakit dan hama padi
+22,37_JAIC_CNN_Transfer_Learning_Rice_Leaf_Disease_2025.pdf,CNN dan transfer learning untuk penyakit daun padi
+23,38_IJNRD_MobileNetV2_Paddy_Leaf_Disease_2025.pdf,MobileNetV2 untuk klasifikasi penyakit daun padi
+24,39_INASS_Paddy_Leaf_Disease_Deep_Learning_2025.pdf,Deep learning untuk klasifikasi penyakit daun padi
+25,40_PowerTech_Paddy_Leaf_Disease_Deep_Learning_2025.pdf,Deep learning untuk deteksi penyakit daun padi

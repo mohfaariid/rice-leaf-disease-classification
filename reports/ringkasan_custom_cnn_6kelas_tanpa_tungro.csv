@@ -1,0 +1,2 @@
+experiment,model,num_classes,excluded_class,accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted
+custom_cnn_6kelas_tanpa_tungro,custom_cnn_6kelas_tanpa_tungro,6,Tungro,0.6834782608695652,0.7116796919243402,0.6813943213693893,0.6697169932134331,0.7121801474390226,0.6834782608695652,0.6713922938202

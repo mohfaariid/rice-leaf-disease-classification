@@ -1,37 +1,67 @@
-# Python cache
+# ==============================================================================
+# Python Virtual Environments & Packages
+# ==============================================================================
+.venv/
+.eval_venv/
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# ==============================================================================
+# Byte-compiled / Optimized / Cache files
+# ==============================================================================
 __pycache__/
 *.py[cod]
-*.pyo
-
-# Virtual environment
-.venv/
-venv/
-env/
-
-# Local config
-.env
-config.yaml
-
-# Dataset and generated files
-data/*
-!data/README.md
-
-outputs/*
-!outputs/README.md
-
-reports/*
-!reports/README.md
-
-# Model artifacts
-*.keras
-*.h5
-*.tflite
-
-# Logs
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
 *.log
+*.err.log
+*.status.txt
 
-# OS/editor files
+# ==============================================================================
+# IDE & System Files
+# ==============================================================================
+.vscode/
+.cursor/
+.idea/
 .DS_Store
 Thumbs.db
-.vscode/
-.idea/
+*.bak
+
+# ==============================================================================
+# Large Weight Files (> 100 MB GitHub Limit) & Intermediate Checkpoints
+# ==============================================================================
+outputs/training_backups/
+outputs/latest_checkpoints/
+outputs/*.keras
+outputs/*.h5
+paper_pipeline_6kelas/outputs/*.keras
+paper_pipeline_6kelas/outputs/*.h5
+*.weights.h5
+
+# Pertahankan HANYA model terbaik (MobileNetV2, 24,1 MB) agar clone langsung siap jalan
+!outputs/mobilenetv2_balanced_quality_hybrid_653_ablation_50_layers_best_val_loss.keras
+
+# ==============================================================================
+# Raw Datasets (Kept outside repo to keep repo lightweight)
+# ==============================================================================
+data/processed/
+data/raw/
+data/rice_leaf_aug_*/
+data/splits/
+
+# ==============================================================================
+# Dokumen Naskah / Draft Administratif Kampus & PDF Jurnal
+# ==============================================================================
+Draft Skripsi/
+Panduan Penulisan/
+references/journals/*.pdf
+references/failed/
+references/temp_extraction/
+Draft Paper/_template_extract/
+source_code_final/

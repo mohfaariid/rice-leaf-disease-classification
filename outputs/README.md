@@ -1,5 +1,8 @@
-# Folder Outputs
+# Outputs
 
-Folder ini digunakan untuk menyimpan model hasil pelatihan dalam format `.keras`.
+Folder ini disiapkan untuk menyimpan artefak hasil training, seperti:
 
-Jika hanya ingin menjalankan prediksi foto lapangan, letakkan model final pada folder ini sesuai nama yang digunakan di script inferensi.
+- model `.keras`
+- checkpoint
+- log training
+- file history training

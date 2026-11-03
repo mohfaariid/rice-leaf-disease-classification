@@ -1,0 +1,13 @@
+                       precision    recall  f1-score   support
+
+Bacterial Leaf Blight       0.61      0.69      0.65        95
+           Brown Spot       0.77      0.69      0.73       101
+    Healthy Rice Leaf       0.90      0.99      0.94       104
+           Leaf Blast       0.60      0.52      0.56        94
+           Leaf scald       0.64      0.68      0.66        88
+        Sheath Blight       0.86      0.81      0.83        98
+               Tungro       1.00      1.00      1.00       188
+
+             accuracy                           0.80       768
+            macro avg       0.77      0.77      0.77       768
+         weighted avg       0.80      0.80      0.80       768

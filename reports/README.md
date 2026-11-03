@@ -1,3 +1,8 @@
-# Folder Reports
+# Reports
 
-Folder ini digunakan untuk menyimpan hasil evaluasi model, seperti history pelatihan, classification report, confusion matrix, grafik pelatihan, hasil ablasi, dan hasil prediksi foto lapangan.
+Folder ini disiapkan untuk menyimpan hasil evaluasi, seperti:
+
+- classification report
+- confusion matrix
+- grafik training
+- tabel perbandingan model

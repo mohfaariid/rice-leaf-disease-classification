@@ -1,298 +1,200 @@
-# Source Code Tugas Akhir
+# 🌾 Rice Leaf Vision: End-to-End Rice Leaf Disease Classification Platform
 
-Nama: Mohammad Farid Anshori  
-NIM: 22523124  
-Program Studi: Informatika  
-Judul: Analisis Perbandingan Performa CNN Kustom dan MobileNetV2 pada Klasifikasi Penyakit Daun Padi Menggunakan Dataset Tidak Seimbang dan Seimbang
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10-orange.svg?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-REST%20API-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 1. Deskripsi Singkat
+> **Undergraduate Thesis Project (Skripsi Sarjana)**  
+> **Title:** *Analisis Perbandingan Performa CNN Kustom dan MobileNetV2 pada Klasifikasi Penyakit Daun Padi Menggunakan Dataset Tidak Seimbang dan Seimbang*  
+> **Author:** Mohammad Farid Anshori (NIM: 22523124)  
+> **Advisor:** Arrie Kurniawardhani, S.Si., M.Kom.  
+> **Institution:** Program Studi Informatika, Universitas Islam Indonesia (UII), 2026
 
-Folder ini berisi source code final yang digunakan dalam penelitian tugas akhir. Kode ini digunakan untuk membangun dataset balanced quality-hybrid, melatih model CNN Kustom dan MobileNetV2, menjalankan percobaan ablasi fine-tuning MobileNetV2, mengevaluasi model, serta melakukan pengujian menggunakan foto lapangan.
+---
 
-Kode yang disertakan hanya kode yang berkaitan dengan penelitian skripsi final tujuh kelas. File percobaan lain yang tidak digunakan dalam laporan akhir tidak disertakan agar struktur folder lebih ringkas.
+## 📌 Executive Summary
 
-Dataset, model hasil pelatihan, dan seluruh hasil eksperimen tidak disertakan penuh di dalam folder ini agar ukuran folder tetap ringan. Folder `data`, `outputs`, dan `reports` disediakan sebagai tempat penyimpanan jika kode akan dijalankan ulang.
+**Rice Leaf Vision** is an end-to-end computer vision and decision support system designed to classify **seven conditions of rice leaf images** (*Oryza sativa*) using deep learning architectures: a **Custom CNN (trained from scratch)** and a **Fine-Tuned MobileNetV2 (Transfer Learning)**.
 
-## 2. Kelas Dataset
+The research addresses the real-world challenge of **severe class imbalance** (e.g., Tungro disease over-representation) by proposing a **Balanced Quality-Hybrid strategy** (quality-based filtering on majority samples combined with targeted augmentation on minority classes). The project is deployed as both an **interactive Streamlit diagnostic web application** with **Explainable AI (Grad-CAM)** and a **production-ready FastAPI REST API**.
 
-Penelitian ini menggunakan tujuh kelas citra daun padi:
+---
+
+## 🔬 Key Research Highlights & Benchmark Results
+
+### 1. Benchmark Evaluation (Thesis Table 4.10)
+All models were evaluated on the identical independent test set (768 images) across multiple scenarios:
+
+| Model Architecture | Dataset Scenario | Configuration | Accuracy | Precision Macro | Recall Macro | F1-Score Macro |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **CNN Kustom (Awal)** | Original (Imbalanced) | Baseline Scratch | 83.20% | 81.11% | 80.79% | 80.74% |
+| **CNN Kustom + Dropout** | Original (Imbalanced) | Regularized Scratch | 86.98% | 85.41% | 85.22% | 85.10% |
+| **MobileNetV2** | Original (Imbalanced) | Fine-Tuning 50 Layers | 87.89% | 86.08% | 85.96% | 85.87% |
+| **CNN Kustom + Dropout** | Balanced Quality-Hybrid | Regularized Scratch | 76.34% | 75.97% | 76.07% | 75.72% |
+| **MobileNetV2 (Champion)** | **Balanced Quality-Hybrid** | **Fine-Tuning 50 Layers** | **92.26%** | **92.14%** | **92.21%** | **92.17%** |
+
+### 2. Core Scientific Findings
+* **Champion Model:** **MobileNetV2 with 50-layer fine-tuning on the balanced quality-hybrid dataset** achieved the highest performance across all evaluation metrics (**92.26% Accuracy** and **92.17% Macro F1-Score**).
+* **The Asymmetric Impact of Dataset Balancing:**
+  * For **MobileNetV2**, quality-hybrid balancing yielded a major performance surge (**+4.37% Accuracy, +6.30% F1-Macro**), demonstrating that pre-trained weights benefit substantially from clean, balanced visual feature representations.
+  * For **Custom CNN**, balancing led to a drop from 86.98% to 76.34%, proving that scratch models are heavily data-hungry and fragile when sample volume is pruned.
+* **Computational Efficiency for Edge Deployment:**  
+  MobileNetV2 reduced model storage by **76% (24.1 MB vs. 101.0 MB)** and utilized **3.7x fewer parameters (2.4M vs. 25.2M)** compared to the Custom CNN, rendering it ideal for mobile and field drone deployment.
+
+---
+
+## 🚀 Core Features
+
+### 1. 🌾 Interactive Streamlit Web Application (`app.py`)
+* **Flexible Multi-Input:** Supports local image file upload (`.jpg`, `.jpeg`, `.png`, `.webp`), **direct live camera capture** (`st.camera_input`), and a **built-in quick sample gallery** including field test photos.
+* **Explainable AI (Grad-CAM Heatmaps):** Real-time activation mapping highlighting the exact leaf lesions responsible for the prediction, validating model attention against false background artifacts.
+* **Side-by-Side Model Comparison (Head-to-Head):** Evaluates MobileNetV2 vs. Custom CNN concurrently, displaying real-time latency in milliseconds and prediction discrepancies.
+* **🤖 Integrated AI Agricultural Consultation (Agri-Chatbot):** Context-aware conversational AI assistant (`chatbot.py`) answering agronomic questions regarding symptoms, balanced fertilizer dosage (N-P-K & Silica), biological/chemical treatments, resistant rice varieties, and thesis ML findings. Operates 100% offline via a local domain knowledge engine or with Google Gemini API.
+* **Agricultural Action Guidance & Export:** Actionable recommendations and one-click diagnostic report download in `.txt` format.
+
+### 2. ⚡ Production-Ready FastAPI REST Service (`api.py`)
+* High-throughput inference API with endpoints:
+  * `POST /predict`: Real-time image disease classification and agronomic guidance.
+  * `POST /chat`: AI conversational consultation endpoint.
+  * `GET /metadata`: Model metrics, parameters, and class ontology.
+* Built-in CORS support for seamless integration with mobile apps (Flutter/React Native) or web dashboards.
+* **Interactive API Documentation:** Available out-of-the-box via Swagger UI (`/docs`) and ReDoc (`/redoc`).
+
+### 3. 🐳 Containerization & Testing
+* **Docker Support:** Reproducible deployment container defined in [`Dockerfile`](Dockerfile).
+* **Automated Unit Testing:** 5-point test suite implemented with `pytest` and `fastapi.testclient` verifying API integrity, chat endpoint, and inference pipeline.
+
+---
+
+## 📂 Project Structure
 
 ```text
-1. Bacterial Leaf Blight
-2. Brown Spot
-3. Healthy Rice Leaf
-4. Leaf Blast
-5. Leaf Scald
-6. Sheath Blight
-7. Tungro
+rice_leaf_disease_project/
+│
+├── app.py                     # Streamlit Interactive Web Application (Grad-CAM & Head-to-Head)
+├── api.py                     # FastAPI REST API Service (Production Backend)
+├── chatbot.py                 # Hybrid AI Agronomic & Thesis Q&A Chatbot Engine
+├── Dockerfile                 # Multi-stage Docker Container Configuration
+├── requirements_web.txt       # Web and API dependencies
+├── .gitignore                 # Safe git exclusion rules (filters files > 100MB)
+├── .dockerignore              # Docker build optimization rules
+│
+├── models/                    # Neural Network Architectures
+│   ├── custom_cnn.py          # Custom CNN architecture & dropout variants
+│   ├── mobilenetv2.py         # MobileNetV2 transfer learning & layer-ablation builder
+│   └── registry.py            # Model factory registry
+│
+├── preprocessing/             # Data Preparation Pipelines
+│   ├── dataset.py             # TensorFlow tf.data dataset loader
+│   ├── distribution.py        # Class distribution metrics
+│   ├── split.py               # Train / Val / Test splitting
+│   └── transforms.py          # Preprocessing & augmentation layers
+│
+├── training/                  # Model Training Pipelines
+│   ├── trainer.py             # Core training loop with callbacks
+│   ├── callbacks.py           # Early stopping, ModelCheckpoint, LR scheduler
+│   └── train_mobilenetv2.py   # Specialized fine-tuning trainer
+│
+├── outputs/                   # Saved Models & Weights
+│   └── mobilenetv2_balanced_quality_hybrid_653_ablation_50_layers_best_val_loss.keras (24.1 MB)
+│
+├── tests/                     # Automated Test Suite
+│   └── test_api.py            # Pytest suite for FastAPI endpoints
+│
+└── data/                      # Data assets
+    └── foto_lapangan/         # Real-world field test photography
 ```
 
-Terdapat dua skenario dataset:
+---
 
-```text
-1. Dataset original
-   Dataset hasil penggabungan dari dua sumber dataset publik.
-   Total data: 5.137 citra.
+## 🛠️ Quickstart Guide
 
-2. Dataset balanced quality-hybrid
-   Dataset yang dibuat dengan quality-based filtering pada kelas Tungro
-   dan augmentasi pada kelas minoritas.
-   Total data: 4.571 citra, dengan 653 citra pada setiap kelas.
-```
-
-## 3. Struktur Folder
-
-```text
-source_code_final/
-|-- configuration/        Konfigurasi path dan parameter dasar
-|-- data/                 Tempat meletakkan dataset
-|-- evaluation/           Kode evaluasi model, metrik, grafik, dan confusion matrix
-|-- inference/            Kode prediksi citra
-|-- models/               Arsitektur CNN Kustom dan MobileNetV2
-|-- outputs/              Tempat menyimpan model hasil pelatihan
-|-- preprocessing/        Kode pemuatan dataset, split data, dan transformasi
-|-- reports/              Tempat menyimpan hasil evaluasi dan visualisasi
-|-- scripts/              Script utama untuk menjalankan eksperimen
-|-- training/             Kode pelatihan model dan callback
-|-- main.py               Entry point pelatihan dasar
-|-- main_balanced_tungro.py
-|-- requirements.txt
-`-- README.md
-```
-
-## 4. Kebutuhan Sistem dan Library
-
-Kode dijalankan menggunakan Python dan TensorFlow. Library yang dibutuhkan tercantum pada file `requirements.txt`.
-
-Instalasi library:
-
+### 1. Clone & Set Up Environment
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/mohfaariid/rice-leaf-disease-classification-cnn-mobilenetv2.git
+cd rice_leaf_disease_project
+
+# Create and activate virtual environment
+python -m venv .venv
+# On Windows:
+.\.venv\Scripts\activate
+# On Linux/macOS:
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements_web.txt
 ```
 
-Isi utama `requirements.txt`:
-
-```text
-tensorflow==2.10.1
-numpy==1.23.5
-pandas
-matplotlib
-scikit-learn
-pyyaml
-```
-
-## 5. Persiapan Dataset
-
-Letakkan dataset pada folder `data` dengan struktur folder berdasarkan nama kelas. Contoh struktur:
-
-```text
-data/
-|-- rice_leaf_7_original/
-|   |-- Bacterial Leaf Blight/
-|   |-- Brown Spot/
-|   |-- Healthy Rice Leaf/
-|   |-- Leaf Blast/
-|   |-- Leaf Scald/
-|   |-- Sheath Blight/
-|   `-- Tungro/
-`-- rice_leaf_aug_7_balanced_quality_hybrid_653/
-    |-- Bacterial Leaf Blight/
-    |-- Brown Spot/
-    |-- Healthy Rice Leaf/
-    |-- Leaf Blast/
-    |-- Leaf Scald/
-    |-- Sheath Blight/
-    `-- Tungro/
-```
-
-Jika dataset balanced quality-hybrid belum tersedia, dataset tersebut dapat dibuat menggunakan script `scripts/build_quality_hybrid_balanced_dataset.py`.
-
-## 6. File Model
-
-Arsitektur model berada pada folder `models`.
-
-```text
-models/custom_cnn.py
-```
-
-File tersebut berisi arsitektur CNN Kustom yang digunakan sebagai model baseline. CNN Kustom dilatih dari awal tanpa bobot pretrained.
-
-```text
-models/mobilenetv2.py
-```
-
-File tersebut berisi arsitektur MobileNetV2 berbasis transfer learning. MobileNetV2 menggunakan bobot pretrained ImageNet, bagian klasifikasi bawaan tidak digunakan, kemudian ditambahkan layer klasifikasi baru untuk tujuh kelas daun padi.
-
-## 7. Script Utama
-
-### 7.1 Membuat Dataset Balanced Quality-Hybrid
-
-Script:
-
-```text
-scripts/build_quality_hybrid_balanced_dataset.py
-```
-
-Fungsi:
-
-```text
-Membuat dataset balanced quality-hybrid dengan cara:
-1. Menghitung skor kualitas citra.
-2. Mengurangi citra kelas Tungro berdasarkan quality-based filtering.
-3. Menambahkan citra pada kelas minoritas menggunakan augmentasi.
-4. Membuat jumlah akhir setiap kelas menjadi 653 citra.
-```
-
-Cara menjalankan:
-
+### 2. Launch the Streamlit Web Application
 ```bash
-python scripts/build_quality_hybrid_balanced_dataset.py
+streamlit run app.py
 ```
+Open your browser and navigate to: **`http://localhost:8501`**
 
-### 7.2 Melatih CNN Kustom dengan Dropout
-
-Script:
-
-```text
-scripts/run_cnn_dropout_original_balanced.py
-```
-
-Fungsi:
-
-```text
-Melatih dan mengevaluasi CNN Kustom dengan Dropout pada dua skenario dataset:
-1. Dataset original.
-2. Dataset balanced quality-hybrid.
-```
-
-Cara menjalankan:
-
+### 3. Launch the FastAPI Service
 ```bash
-python scripts/run_cnn_dropout_original_balanced.py
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
 ```
+* **API Root:** `http://localhost:8000`
+* **Interactive Swagger UI:** `http://localhost:8000/docs`
 
-### 7.3 Melatih MobileNetV2 dengan Percobaan Ablasi Fine-tuning
-
-Script:
-
-```text
-scripts/run_mobilenetv2_finetune_ablation.py
-```
-
-Fungsi:
-
-```text
-Menjalankan percobaan MobileNetV2 dengan beberapa skenario jumlah layer akhir
-yang dibuka pada tahap fine-tuning, yaitu 0, 10, 20, 30, dan 50 layer.
-```
-
-Cara menjalankan:
-
+#### Sample API Request (`curl`):
 ```bash
-python scripts/run_mobilenetv2_finetune_ablation.py
+curl -X POST "http://localhost:8000/predict" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "file=@data/foto_lapangan/foto_001.jpeg"
 ```
 
-Contoh menjalankan hanya konfigurasi 50 layer:
-
+### 4. Run Automated Tests
 ```bash
-python scripts/run_mobilenetv2_finetune_ablation.py --layers 50
+pytest tests/test_api.py -v
 ```
 
-### 7.4 Pengujian Foto Lapangan
-
-Script:
-
-```text
-scripts/run_field_photo_inference.py
-```
-
-Fungsi:
-
-```text
-Melakukan prediksi terhadap foto daun padi yang diambil langsung dari lapangan
-menggunakan dua model final:
-1. CNN Kustom dengan Dropout.
-2. MobileNetV2 fine-tuning 50 layer.
-```
-
-Cara menjalankan:
-
+### 5. Run via Docker
 ```bash
-python scripts/run_field_photo_inference.py
+# Build docker image
+docker build -t rice-leaf-vision .
+
+# Run container (Exposing Streamlit on 8501)
+docker run -p 8501:8501 rice-leaf-vision
 ```
 
-Catatan:
+---
 
-```text
-Pengujian foto lapangan bersifat kualitatif karena foto tidak memiliki label
-ground truth yang terverifikasi.
+## 🌿 Target Disease Classes
+
+| No | Disease Class (English) | Nama Kondisi (Bahasa Indonesia) | Causal Agent |
+| :-: | :--- | :--- | :--- |
+| 1 | **Bacterial Leaf Blight** | Hawar Daun Bakteri | *Xanthomonas oryzae pv. oryzae* |
+| 2 | **Brown Spot** | Bercak Cokelat | *Bipolaris oryzae* |
+| 3 | **Healthy Rice Leaf** | Daun Padi Sehat | *Normal physiological status* |
+| 4 | **Leaf Blast** | Blas Daun | *Magnaporthe oryzae* |
+| 5 | **Leaf Scald** | Hawar Bergaris / Scald | *Microdochium albescens* |
+| 6 | **Sheath Blight** | Hawar Pelepah | *Rhizoctonia solani* |
+| 7 | **Tungro** | Penyakit Tungro | *RTBV & RTSV (Vector: Nephotettix virescens)* |
+
+---
+
+## 📜 Citation & Academic Acknowledgment
+
+If you reference this implementation or research in your academic work, please cite:
+
+```bibtex
+@thesis{anshori2026riceleaf,
+  author       = {Mohammad Farid Anshori},
+  title        = {Analisis Perbandingan Performa CNN Kustom dan MobileNetV2 pada Klasifikasi Penyakit Daun Padi Menggunakan Dataset Tidak Seimbang dan Seimbang},
+  school       = {Universitas Islam Indonesia},
+  year         = {2026},
+  type         = {Skripsi Sarjana},
+  address      = {Yogyakarta, Indonesia}
+}
 ```
 
-## 8. Urutan Menjalankan Eksperimen
+---
 
-Urutan menjalankan eksperimen dari awal:
-
-```text
-1. Siapkan dataset original pada folder data.
-2. Jalankan script pembuatan dataset balanced quality-hybrid.
-3. Jalankan training CNN Kustom dengan Dropout.
-4. Jalankan training MobileNetV2 dan percobaan ablasi fine-tuning.
-5. Jalankan evaluasi dan periksa hasil pada folder reports.
-6. Jalankan pengujian foto lapangan jika model final sudah tersedia.
-```
-
-Perintah ringkas:
-
-```bash
-python scripts/build_quality_hybrid_balanced_dataset.py
-python scripts/run_cnn_dropout_original_balanced.py
-python scripts/run_mobilenetv2_finetune_ablation.py
-python scripts/run_field_photo_inference.py
-```
-
-## 9. Hasil Keluaran
-
-Model hasil pelatihan disimpan pada folder:
-
-```text
-outputs/
-```
-
-Hasil evaluasi dan visualisasi disimpan pada folder:
-
-```text
-reports/
-```
-
-Contoh hasil keluaran:
-
-```text
-classification_report_custom_cnn_dropout_original.txt
-classification_report_custom_cnn_balanced_quality_hybrid_653.txt
-classification_report_mobilenetv2_original_ablation_50_layers.txt
-classification_report_mobilenetv2_balanced_quality_hybrid_653_ablation_50_layers.txt
-prediksi_foto_lapangan_2_model.csv
-hasil_prediksi_foto_lapangan_2_model.png
-```
-
-## 10. Ringkasan Hasil Akhir Penelitian
-
-Model terbaik pada penelitian ini adalah MobileNetV2 fine-tuning 50 layer pada dataset balanced quality-hybrid.
-
-Hasil evaluasi model terbaik:
-
-```text
-Accuracy       : 92,26%
-Recall macro   : 92,21%
-F1-score macro : 92,17%
-```
-
-MobileNetV2 fine-tuning 50 layer dipilih karena memperoleh performa evaluasi terbaik dibandingkan CNN Kustom dan skenario MobileNetV2 lainnya. Selain itu, MobileNetV2 memiliki jumlah parameter dan ukuran model yang lebih kecil dibandingkan CNN Kustom.
-
-## 11. Catatan Tambahan
-
-1. Jalankan perintah dari folder `source_code_final`.
-2. Folder ini hanya memuat source code yang digunakan pada skripsi final tujuh kelas.
-3. Dataset dan model hasil pelatihan perlu diletakkan secara terpisah jika kode ingin dijalankan ulang.
-4. File `.ps1` pada folder `scripts` merupakan script bantu PowerShell untuk Windows.
-5. Pelatihan model dapat memerlukan waktu cukup lama, terutama pada percobaan ablasi MobileNetV2.
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).

@@ -1,0 +1,26 @@
+{
+  "dataset_dir": "C:\\Users\\farid\\Downloads\\archive (5)\\rice_leaf_disease_project\\data\\rice_leaf_aug_6_no_tungro",
+  "class_names": [
+    "Bacterial Leaf Blight",
+    "Brown Spot",
+    "Healthy Rice Leaf",
+    "Leaf Blast",
+    "Leaf scald",
+    "Sheath Blight"
+  ],
+  "image_size": 256,
+  "batch_size": 32,
+  "epochs_max": 100,
+  "learning_rate": 0.001,
+  "loss": "SparseCategoricalCrossentropy(from_logits=True)",
+  "optimizer": "Adam",
+  "early_stopping_monitor": "val_loss",
+  "early_stopping_patience": 12,
+  "metadata": {
+    "total_images": 3829,
+    "train_images": 2680,
+    "validation_images": 574,
+    "test_images": 575,
+    "num_classes": 6
+  }
+}

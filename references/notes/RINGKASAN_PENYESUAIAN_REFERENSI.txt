@@ -1,0 +1,204 @@
+================================================================================
+RINGKASAN PENYESUAIAN REFERENSI - DRAFT SKRIPSI BAB I-V
+================================================================================
+
+TANGGAL: 2026-06-08
+STATUS: ✅ SELESAI
+
+================================================================================
+1. RINGKASAN PEKERJAAN
+================================================================================
+
+Telah dilakukan penyesuaian penomoran dan pemformatan referensi pada draft 
+skripsi "Perbandingan CNN Kustom dan MobileNetV2 Berbasis Transfer Learning 
+untuk Klasifikasi Tujuh Kondisi Daun Padi Berdasarkan Citra Digital" (BAB I-V).
+
+HASIL:
+• 14 referensi diidentifikasi dan dipetakan ke file PDF yang tersedia
+• Daftar pustaka yang sebelumnya berupa placeholder kini sudah terstruktur
+• 3 file dokumentasi pendukung dibuat untuk referensi dan verifikasi
+• Semua citasi dalam teks (section 2.20) sudah sesuai dengan nomor referensi
+
+================================================================================
+2. FILE YANG DIPERBARUI
+================================================================================
+
+FILE UTAMA:
+✓ draft_skripsi_bab_1_5.md
+  - Lokasi: rice_leaf_disease_project/draft_skripsi_bab_1_5.md
+  - Perubahan: Baris 462-490
+  - Sebelum: "Daftar Pustaka Sementara" (10 placeholder)
+  - Sesudah: "Daftar Pustaka" (14 referensi terstruktur)
+  - Format: Judul - Jurnal - Tahun
+
+FILE DOKUMENTASI (BARU):
+✓ REFERENSI_MAPPING.md
+  - Pemetaan detail [1]-[14] ke nama file PDF
+  - Tabel lengkap dengan topik dan fokus setiap referensi
+  - Catatan tentang pengelompokan referensi dalam teks
+  
+✓ DAFTAR_PUSTAKA_IEEE.md
+  - Format IEEE lengkap untuk 14 referensi
+  - Template untuk final submission
+  - Panduan penggunaan per bab (BAB II, BAB IV)
+  
+✓ PANDUAN_REFERENSI.md
+  - Panduan lengkap cara menggunakan daftar pustaka
+  - FAQ dan troubleshooting
+  - Next steps dan rekomendasi
+
+================================================================================
+3. PEMETAAN REFERENSI [1]-[14]
+================================================================================
+
+[1]  18_Frontiers_Automatic_Diagnosis_Rice_Diseases_DL_2021.pdf
+     → Diagnosis otomatis penyakit padi menggunakan deep learning
+
+[2]  31_Frontiers_Image_Dataset_Config_Rice_Disease_CNN_2022.pdf
+     → Pengaruh konfigurasi dataset pada CNN untuk penyakit padi
+
+[3]  23_CoSIE_MobileNetV2_EfficientNetB0_Rice_Leaf_Disease_2026.pdf
+     → Perbandingan MobileNetV2 dan EfficientNetB0
+
+[4]  24_Mandiri_MobileNetV2_MobileNetV3_Rice_Leaf_Disease_2025.pdf
+     → Perbandingan MobileNetV2 dan MobileNetV3
+
+[5]  25_TIERS_Enhanced_CAE_CNN_Rice_Leaf_Disease_2025.pdf
+     → Arsitektur CNN efisien untuk klasifikasi penyakit daun padi
+
+[6]  27_JITK_Lightweight_CNN_Rice_Leaf_Disease_2026.pdf
+     → Lightweight CNN untuk identifikasi penyakit daun padi
+
+[7]  33_HSET_Lightweight_MobileNetV2_Paddy_Disease_2023.pdf
+     → MobileNetV2 ringan untuk deteksi penyakit padi
+
+[8]  37_JAIC_CNN_Transfer_Learning_Rice_Leaf_Disease_2025.pdf
+     → CNN dan transfer learning untuk klasifikasi penyakit daun padi
+
+[9]  13_IJISEM_Rice_Leaf_Disease_CNN.pdf
+     → Implementasi CNN untuk klasifikasi penyakit daun padi
+
+[10] 35_JIU_UPGRIS_MobileNetV2_TFLite_Rice_Disease_2024.pdf
+     → MobileNetV2 dan TensorFlow Lite untuk deteksi penyakit padi
+
+[11] 10_IJACSA_Explainable_Deep_Transfer_Learning_Rice_2024.pdf
+     → Transfer learning dan explainable AI untuk klasifikasi penyakit padi
+
+[12] 11_IJETER_Rice_Leaf_Disease_Deep_Learning_2020.pdf
+     → Deep learning untuk klasifikasi penyakit daun padi
+
+[13] 22_JAIC_Multi_Class_Rice_Leaf_Disease_2025.pdf
+     → Klasifikasi multikelas penyakit daun padi
+
+[14] 08_arXiv_Rice_Disease_Recognition_Transfer_Learning_2023.pdf
+     → Transfer learning untuk pengenalan penyakit padi
+
+================================================================================
+4. VERIFIKASI CITASI DALAM TEKS
+================================================================================
+
+BAB II - Section 2.20 (Penelitian Terkait):
+
+Sebelum:
+"...CNN mampu digunakan untuk mengenali pola visual penyakit tanaman, 
+sedangkan transfer learning dapat meningkatkan performa model [1]–[8]..."
+
+Sesudah:
+✓ Tetap sama [1]–[8] (8 referensi untuk CNN & transfer learning)
+✓ Ditambah [9]–[14] (6 referensi untuk MobileNetV2 & model ringan)
+
+Total: 14 referensi yang dikutip dalam draft
+
+================================================================================
+5. STRUKTUR DAN ORGANISASI
+================================================================================
+
+Referensi dikelompokkan berdasarkan topik:
+
+FOUNDATIONAL (Pendahuluan):
+[1], [2] - Frontiers articles (2021-2022)
+→ Untuk context dan state-of-the-art
+
+MODEL ARCHITECTURE (Arsitektur Model):
+[3], [4], [5], [6] - CoSIE, Mandiri, TIERS, JITK (2025-2026)
+→ Untuk diskusi model CNN dan lightweight approaches
+
+TRANSFER LEARNING & OPTIMIZATION:
+[7], [8], [10], [11] - HSET, JAIC, JIU-UPGRIS, IJACSA (2023-2025)
+→ Untuk metodologi transfer learning dan implementasi
+
+DEEP LEARNING FUNDAMENTALS:
+[9], [12], [13], [14] - IJISEM, IJETER, JAIC, arXiv (2020-2025)
+→ Untuk fondasi dan teknik multi-class classification
+
+================================================================================
+6. CATATAN PENTING
+================================================================================
+
+✓ SUDAH SELESAI:
+  • Penomoran referensi [1]-[14] konsisten di teks dan daftar pustaka
+  • Semua referensi dipetakan ke file PDF yang valid
+  • Format sederhana dan IEEE tersedia
+  • 3 file dokumentasi pendukung dibuat
+
+⚠ UNTUK FINAL SUBMISSION:
+  • Ekstrak metadata lengkap dari setiap PDF (author, pages, DOI, etc.)
+  • Sesuaikan format dengan requirement universitas
+  • Verifikasi kembali urutan citasi sesuai standard IEEE
+  • Lakukan proof-reading final
+
+✓ INFORMASI LENGKAP TERSEDIA DI:
+  • REFERENSI_MAPPING.md - Pemetaan detail
+  • DAFTAR_PUSTAKA_IEEE.md - Template IEEE format
+  • PANDUAN_REFERENSI.md - Panduan lengkap & FAQ
+
+================================================================================
+7. FILE LOCATIONS
+================================================================================
+
+Draft (Updated):
+rice_leaf_disease_project/draft_skripsi_bab_1_5.md
+
+Documentation (New):
+rice_leaf_disease_project/REFERENSI_MAPPING.md
+rice_leaf_disease_project/DAFTAR_PUSTAKA_IEEE.md
+rice_leaf_disease_project/PANDUAN_REFERENSI.md
+rice_leaf_disease_project/RINGKASAN_PENYESUAIAN_REFERENSI.txt (this file)
+
+PDF References (Source):
+rice_leaf_disease_project/references/journals/ (25 files total, 14 used)
+rice_leaf_disease_project/references/references_index.csv
+
+================================================================================
+8. NEXT STEPS
+================================================================================
+
+1. UNTUK DRAFT PENGAJUAN:
+   ✓ Draft sudah siap dengan daftar pustaka
+   ✓ Gunakan format sederhana (sudah di draft_skripsi_bab_1_5.md)
+
+2. UNTUK FINAL SUBMISSION:
+   □ Ekstrak full metadata dari PDF (author, volume, pages, DOI)
+   □ Format sesuai template IEEE (DAFTAR_PUSTAKA_IEEE.md)
+   □ Verifikasi urutan citasi
+
+3. OPTIONAL (UNTUK ENHANCED QUALITY):
+   □ Create BibTeX file untuk metadata management
+   □ Use citation manager (Zotero, Mendeley)
+   □ Cross-reference check dengan PDF content
+
+================================================================================
+9. CONTACT & SUPPORT
+================================================================================
+
+Jika ada pertanyaan tentang:
+• Referensi mana yang sesuai topik → Lihat REFERENSI_MAPPING.md
+• Format IEEE → Lihat DAFTAR_PUSTAKA_IEEE.md
+• Cara menggunakan daftar pustaka → Lihat PANDUAN_REFERENSI.md
+• Metadata lengkap dari PDF → Buka file di references/journals/
+
+================================================================================
+END OF SUMMARY
+================================================================================
+Status: ✅ READY FOR THESIS WRITING
+Last Updated: 2026-06-08

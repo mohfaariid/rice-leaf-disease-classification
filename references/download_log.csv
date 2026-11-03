@@ -1,0 +1,23 @@
+﻿"File","Status","Bytes","Url","Error"
+"01_MDPI_Agriculture_Deep_Learning_Rice_Leaf_Disease_2023.pdf","FAILED","0","https://www.mdpi.com/2077-0472/13/8/1505/pdf","The remote server returned an error: (403) Forbidden."
+"02_MDPI_Technologies_MobileNetV2_Rice_Disease_2024.pdf","FAILED","0","https://www.mdpi.com/2227-7080/12/11/214/pdf","The remote server returned an error: (403) Forbidden."
+"03_MDPI_Agronomy_Rice_Disease_MobileNet_2023.pdf","FAILED","0","https://www.mdpi.com/2073-4395/13/4/961/pdf","The remote server returned an error: (403) Forbidden."
+"04_ScientificReports_Rice_Leaf_Disease_Deep_Learning_2025.pdf","OK","3038","https://www.nature.com/articles/s41598-025-13079-z.pdf",
+"05_Springer_MultimediaTools_RiceNet_2025.pdf","OK","3038","https://link.springer.com/content/pdf/10.1007/s11042-025-20979-9.pdf",
+"06_Springer_DISC_Dual_Output_CNN_Rice_Disease_2025.pdf","OK","3038","https://link.springer.com/content/pdf/10.1007/s41314-025-00089-y.pdf",
+"07_arXiv_Rice_Leaf_Disease_DL_2024.pdf","OK","909647","https://arxiv.org/pdf/2408.01752",
+"08_arXiv_Rice_Disease_Recognition_Transfer_Learning_2023.pdf","OK","244961","https://arxiv.org/pdf/2301.05528",
+"09_arXiv_Plant_Disease_Recognition_2024.pdf","OK","1025608","https://arxiv.org/pdf/2412.07182",
+"10_IJACSA_Explainable_Deep_Transfer_Learning_Rice_2024.pdf","OK","10872521","https://thesai.org/Downloads/Volume15No12/Paper_87-Explainable_Deep_Transfer_Learning_Framework.pdf",
+"11_IJETER_Rice_Leaf_Disease_Deep_Learning_2020.pdf","OK","244961","https://www.warse.org/IJETER/static/pdf/file/ijeter708102020.pdf",
+"12_JAIEA_Rice_Leaf_Disease_CNN.pdf","OK","405480","https://ioinformatic.org/index.php/JAIEA/article/download/2137/1436",
+"13_IJISEM_Rice_Leaf_Disease_CNN.pdf","OK","699380","https://ijisem.com/journal/index.php/ijisem/article/download/65/57/186",
+"14_IDRI_Rice_Leaf_Disease_MobileNetV2.pdf","FAILED","0","https://www.idri.edu.kh/wp-content/uploads/2025/12/M4_update.pdf","The request was aborted: The connection was closed unexpectedly."
+"15_Sage_JIFS_Rice_Leaf_Disease_DL.pdf","FAILED","0","https://journals.sagepub.com/doi/pdf/10.3233/JIFS-230655","The remote server returned an error: (403) Forbidden."
+"16_IJRITCC_Rice_Leaf_Disease_CNN.pdf","OK","647585","https://ijritcc.org/index.php/ijritcc/article/download/7408/6213/8025",
+"17_IJECE_Rice_Disease_Classification_CNN.pdf","OK","512355","https://ijece.iaescore.com/index.php/IJECE/article/download/33734/17249",
+"18_Frontiers_Automatic_Diagnosis_Rice_Diseases_DL_2021.pdf","OK","2990722","https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2021.701038/pdf",
+"19_MDPI_Plants_Rice_Disease_CNN_2022.pdf","FAILED","0","https://www.mdpi.com/2223-7747/11/17/2230/pdf","The remote server returned an error: (403) Forbidden."
+"20_MDPI_AppliedSciences_Rice_Leaf_Disease_GAN_CNN_2023.pdf","FAILED","0","https://www.mdpi.com/2076-3417/13/3/1346/pdf","The remote server returned an error: (403) Forbidden."
+"21_MDPI_Agriculture_Rice_Disease_Improved_CNN_2023.pdf","FAILED","0","https://www.mdpi.com/2077-0472/13/1/170/pdf","The remote server returned an error: (403) Forbidden."
+"22_JAIC_Multi_Class_Rice_Leaf_Disease_2025.pdf","OK","534966","https://jurnal.polibatam.ac.id/index.php/JAIC/article/download/12499/3546",

@@ -1,0 +1,352 @@
+:root {
+    --ink: #142a22;
+    --muted: #4a5c54;
+    --leaf: #235c43;
+    --leaf-light: #2e7d58;
+    --lime: #cbe368;
+    --paper: #f8faf5;
+    --line: #d8e2d4;
+    --card-bg: #ffffff;
+}
+
+/* Paksa seluruh aplikasi dan kontainer utama menggunakan tema terang kontras tinggi */
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewBlockContainer"],
+.main {
+    background: radial-gradient(circle at 90% 5%, #ebf5d2 0, transparent 28rem), #f8faf5 !important;
+    background-color: #f8faf5 !important;
+    color: #142a22 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+[data-testid="stHeader"] { background: transparent !important; }
+.block-container { max-width: 1200px; padding-top: 1.2rem; padding-bottom: 3.5rem; }
+
+/* Typography Global Override */
+p, span, label, li, h1, h2, h3, h4, h5, h6, strong, em, td, th {
+    color: #142a22 !important;
+}
+.muted {
+    color: #566961 !important;
+}
+
+/* Hero Banner */
+.hero {
+    background: linear-gradient(130deg, #10382b, #1e5942 55%, #2a7354) !important;
+    border-radius: 18px;
+    padding: 2.2rem 2.4rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 16px 40px rgba(16, 56, 43, .16);
+}
+.hero * {
+    color: #ffffff !important;
+}
+.hero .badge {
+    display: inline-block;
+    background: rgba(203, 227, 104, 0.2) !important;
+    border: 1px solid rgba(203, 227, 104, 0.45) !important;
+    color: #dff08c !important;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    margin-bottom: .8rem;
+}
+.hero h1 {
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: .3rem 0 .8rem;
+}
+.hero p {
+    font-size: 1.05rem;
+    max-width: 820px;
+    line-height: 1.6;
+}
+
+/* Result Cards */
+.result-card {
+    background: linear-gradient(135deg, #eef6e4, #f8fbf3) !important;
+    border: 1px solid #c8dbc0 !important;
+    border-left: 6px solid var(--leaf-light) !important;
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    box-shadow: 0 6px 20px rgba(35, 92, 67, .06);
+}
+.result-card-cnn {
+    background: linear-gradient(135deg, #fef8eb, #fffdf8) !important;
+    border: 1px solid #ecd8ab !important;
+    border-left: 6px solid #d9822b !important;
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    margin: 1rem 0;
+    box-shadow: 0 6px 20px rgba(217, 130, 43, .06);
+}
+.res-label {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    color: #566961 !important;
+}
+.res-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #142a22 !important;
+    margin: .25rem 0 .35rem;
+}
+.res-meta {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #142a22 !important;
+}
+
+.stat-box {
+    background: #ffffff !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 10px;
+    padding: .75rem .95rem;
+    text-align: center;
+}
+.stat-val {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--leaf) !important;
+}
+.stat-desc {
+    font-size: .75rem;
+    color: #566961 !important;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.section-header {
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--leaf) !important;
+    margin-top: 1rem;
+    margin-bottom: .4rem;
+}
+
+/* Alert Box (Warning, Info, Success, Error) */
+div[data-testid="stAlert"] {
+    border-radius: 10px !important;
+    border-width: 1.5px !important;
+}
+div[data-testid="stAlert"] p,
+div[data-testid="stAlert"] span,
+div[data-testid="stAlert"] div {
+    color: #1b382b !important;
+    font-weight: 550 !important;
+    font-size: .95rem !important;
+}
+div[data-baseweb="notification"] {
+    color: #1b382b !important;
+}
+
+/* Buttons (Primary, Quick Prompts, Form Submit, Download) */
+.stButton > button, div[data-testid="stFormSubmitButton"] > button, .stDownloadButton > button {
+    background-color: #235c43 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+.stButton > button *, div[data-testid="stFormSubmitButton"] > button *, .stDownloadButton > button * {
+    color: #ffffff !important;
+}
+.stButton > button:hover, div[data-testid="stFormSubmitButton"] > button:hover, .stDownloadButton > button:hover {
+    background-color: #16402e !important;
+    box-shadow: 0 4px 14px rgba(22, 64, 46, .25) !important;
+}
+
+/* Chat Messages */
+div[data-testid="stChatMessage"] {
+    background-color: #ffffff !important;
+    border: 1px solid #dbe6d6 !important;
+    border-radius: 12px !important;
+    padding: .8rem 1rem !important;
+    box-shadow: 0 2px 8px rgba(20, 42, 34, .04) !important;
+}
+div[data-testid="stChatMessage"] p, 
+div[data-testid="stChatMessage"] span,
+div[data-testid="stChatMessage"] strong,
+div[data-testid="stChatMessage"] li {
+    color: #142a22 !important;
+}
+
+/* Form Container Wrapper */
+form[data-testid="stForm"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border: 1.5px solid #d8e2d4 !important;
+    border-radius: 12px !important;
+    padding: 1.1rem 1.3rem !important;
+    box-shadow: 0 4px 14px rgba(20, 42, 34, 0.04) !important;
+}
+
+/* Input Field Container (BaseWeb & Streamlit 1.28) */
+div[data-testid="stTextInput"],
+div[data-testid="stTextInput"] > div,
+div[data-testid="textInputRootElement"],
+div[data-baseweb="base-input"],
+div[data-baseweb="input"] {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border: 1.5px solid #235c43 !important;
+    border-radius: 8px !important;
+}
+
+/* Input Element & Typed Text */
+div[data-testid="stTextInput"] input,
+div[data-testid="textInputRootElement"] input,
+div[data-baseweb="base-input"] input,
+div[data-baseweb="input"] input,
+input[type="text"],
+input {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+    caret-color: #111827 !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+}
+
+/* Placeholder Text */
+div[data-testid="stTextInput"] input::placeholder,
+div[data-baseweb="base-input"] input::placeholder,
+div[data-baseweb="input"] input::placeholder,
+input::placeholder {
+    color: #6b7280 !important;
+    -webkit-text-fill-color: #6b7280 !important;
+    font-weight: 400 !important;
+}
+
+/* Helper instruction ("Press Enter to submit form") */
+div[data-testid="InputInstructions"],
+div[data-testid="InputInstructions"] *,
+div[data-testid="stTextInput"] small {
+    color: #4b5563 !important;
+    -webkit-text-fill-color: #4b5563 !important;
+    background-color: transparent !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+}
+
+/* Dropdown / Selectbox */
+div[data-baseweb="select"],
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-color: #c4d7be !important;
+}
+div[data-baseweb="select"] * {
+    color: #142a22 !important;
+    -webkit-text-fill-color: #142a22 !important;
+}
+
+/* Tabs Styling */
+button[data-baseweb="tab"] {
+    background-color: transparent !important;
+    color: #142a22 !important;
+    font-weight: 600 !important;
+}
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #235c43 !important;
+    border-bottom-color: #235c43 !important;
+}
+button[data-baseweb="tab"] p {
+    color: inherit !important;
+    font-weight: inherit !important;
+}
+
+/* Table Styling (st.table & HTML tables) */
+div[data-testid="stTable"],
+div[data-testid="stTable"] table {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1.5px solid #d8e2d4 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 14px rgba(20, 42, 34, 0.04) !important;
+}
+
+div[data-testid="stTable"] table thead tr {
+    background-color: #eaf5e9 !important;
+    background: #eaf5e9 !important;
+}
+
+div[data-testid="stTable"] table th {
+    background-color: #eaf5e9 !important;
+    background: #eaf5e9 !important;
+    color: #142a22 !important;
+    -webkit-text-fill-color: #142a22 !important;
+    font-weight: 700 !important;
+    font-size: 0.88rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    padding: 0.8rem 1rem !important;
+    border: none !important;
+    border-bottom: 2px solid #b7deb3 !important;
+    text-align: left !important;
+}
+
+div[data-testid="stTable"] table tbody tr {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+div[data-testid="stTable"] table tbody tr:nth-child(even) {
+    background-color: #f7faf5 !important;
+    background: #f7faf5 !important;
+}
+
+div[data-testid="stTable"] table tbody tr:hover {
+    background-color: #eef5ea !important;
+    background: #eef5ea !important;
+}
+
+div[data-testid="stTable"] table td {
+    background-color: transparent !important;
+    color: #142a22 !important;
+    -webkit-text-fill-color: #142a22 !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1rem !important;
+    border: none !important;
+    border-bottom: 1px solid #eef3eb !important;
+}
+
+div[data-testid="stTable"] table tr:last-child td {
+    border-bottom: none !important;
+}
+
+table th, table td {
+    color: #142a22 !important;
+    -webkit-text-fill-color: #142a22 !important;
+}
+
+/* Expander */
+details summary {
+    color: #142a22 !important;
+    font-weight: 700 !important;
+}
+details summary span {
+    color: #142a22 !important;
+}
+details[open] {
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: .5rem !important;
+}

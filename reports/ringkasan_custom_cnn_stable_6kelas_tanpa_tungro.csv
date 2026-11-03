@@ -1,0 +1,2 @@
+experiment,model,num_classes,excluded_class,image_size,batch_size,epochs_configured,epochs_ran,test_accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted
+custom_cnn_stable_6kelas_tanpa_tungro,CNN Kustom Stable,6,Tungro,128,32,30,27,0.6156521739130435,0.6444915801208707,0.6142880155866274,0.613283622873353,0.6462985711333737,0.6156521739130435,0.615045677657279
